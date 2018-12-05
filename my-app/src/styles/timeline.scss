@@ -1,0 +1,108 @@
+/* timeline  styles */
+
+.timeline {
+  ul {
+    height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-inline-start: 0;
+    li {
+      list-style-type: none;
+      position: relative;
+      width: 6px;
+      margin: 0 auto;
+      padding-top: 35px;
+      background: #d8d8d8;
+      &::after {
+        content: '';
+        position: absolute;
+        left: -125%;
+        bottom: 40%;
+        transition: all 0.5s ease-in-out;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: inherit;
+      }
+      &:hover {
+        &::after {
+          background: #999797;
+          transform: scale(1.2);
+          cursor: pointer;
+        }
+      }
+      div {
+        position: relative;
+        width: 180px;
+        padding: 15px 15px 0 15px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .5s ease-in-out;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 15px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+        }
+        time {
+          float: left;
+          width: 100%;
+        }
+      }
+      &:nth-child(odd) {
+        div {
+          left: 40px;
+          transform: translate3d(200px, 0, 0);
+          &::before {
+            left: -15px;
+            border-width: 8px 16px 8px 0;
+            border-color: transparent #b3484873 transparent transparent;
+          }
+        }
+      }
+      &:nth-child(even) {
+        div {
+          left: -244px;
+          text-align: right;
+          transform: translate3d(-200px, 0, 0);
+          &::before {
+            right: -15px;
+            border-width: 8px 0 8px 16px;
+            border-color: transparent transparent transparent #b3484873;
+          }
+        }
+      }
+      &.in-view {
+        div {
+          transform: none;
+          visibility: visible;
+          opacity: 1;
+          bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline {
+    ul {
+      li {
+        margin-left: 20%;
+        &:nth-child(even) {
+          div {
+            left: 40px;
+            text-align: initial;
+            &::before {
+              left: -15px;
+              border-width: 8px 16px 8px 0;
+              border-color: transparent #b3484873 transparent transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
