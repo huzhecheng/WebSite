@@ -14,20 +14,25 @@ let isElementInViewport = (el) => {
 
 let data = [
   {
+    time: "Now",
+    title: '一卡通票證 Inc.',
+    job: 'Back End Engineer'
+  },
+  {
+    time: 2019,
+    title: '聖◯ Inc.',
+    job: 'Full Stack Engineer'
+  },
+  {
+    time: 2017,
+    title: ' 鴻◯◯◯ Inc.',
+    job: 'Full Stack Engineer'
+  },
+  {
     time: 2015,
     title: '資策會 行動應用程式開發',
     job: 'Student'
   },
-  {
-    time: 2016,
-    title: ' 鴻◯◯◯ Inc.',
-    job: 'Full Stack Developer'
-  },
-  {
-    time: 2017,
-    title: '聖◯ Inc.',
-    job: 'Full Stack Developer'
-  }
 ]
 
 class Timeline extends Component {
